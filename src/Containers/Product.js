@@ -2,16 +2,19 @@ import { connect } from "react-redux"
 
 import Product from "../component/Product"
 
+import * as actions from "../store/actions/product"
+
 const mapState = state => {
+    // console.log(state);
     return {
-        state
+        ProductData: state.Product
     }
 }
 
 const mapDispatch = dispatch => {
     return {
-        log() {
-            console.log('111');
+        fetchProduct() {
+            dispatch(actions.getProduct())
         }
     }
 }
